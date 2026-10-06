@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <aside class="sidenav">
+        <div class="logo" aria-label="DC Technologies">
+            <span class="logo-mark">DC</span>
+            <span class="logo-text">Technologies</span>
+        </div>
+        <nav>
+            <a href="#" class="nav-link active"><i class="fa fa-dashboard icon"></i> <span>Dashboard</span></a>
+            <a href="#" class="nav-link"><i class="fa fa-list-alt icon"></i> <span>Projects</span></a>
+            <a href="#" class="nav-link"><i class="fa fa-shopping-bag icon"></i> <span>Charts</span></a>
+            <a href="#" class="nav-link"><i class="fa fa-tasks icon"></i> <span>Inventory</span></a>
+            <a href="#" class="nav-link"><i class="fa fa-user icon"></i> <span>Accounts</span></a>
+            <a href="#" class="nav-link"><i class="fa fa-bell icon"></i> <span>Tasks</span></a>
+            <a href="#" class="nav-link"><i class="fa fa-circle icon"></i> <span>Icons</span></a>
+        </nav>
+    </aside>
+
+    <main id="main">
+        <header class="head">
+            <div class="title-wrap">
+                <span class="nav" aria-label="Toggle sidebar" role="button" tabindex="0">&#9776;</span>
+                <h1>Dashboard</h1>
+            </div>
+
+            <div class="header-actions">
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fa fa-moon-o"></i>
+                </button>
+                <div class="profile">
+                <div class="avatar">DC</div>
+                    <div class="profile-text">
+                        <p>Da Cyberman</p>
+                        <span>Database Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="stats">
+            <article class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-number">2343</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat-icon"><i class="fa fa-users"></i></div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-number">35343</div>
+                    <div class="stat-label">Orders</div>
+                </div>
+                <div class="stat-icon"><i class="fa fa-list-alt"></i></div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-number">98</div>
+                    <div class="stat-label">Tasks</div>
+                </div>
+                <div class="stat-icon"><i class="fa fa-tasks"></i></div>
+            </article>
+        </section>
+
+        <section class="bottom-grid">
+            <div class="table-card">
+                <div class="card-head">
+                    <button class="pill-btn">Sell All</button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Contact</th>
+                            <th>Country</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Maria Anders</td>
+                            <td>Germany</td>
+                        </tr>
+                        <tr>
+                            <td>Francisco Chang</td>
+                            <td>Mexico</td>
+                        </tr>
+                        <tr>
+                            <td>Roland Mendel</td>
+                            <td>Austria</td>
+                        </tr>
+                        <tr>
+                            <td>Helen Bennett</td>
+                            <td>UK</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <aside class="ring-card">
+                <div class="card-head sales-head">
+                    <h3>Total Sale</h3>
+                    <button class="pill-btn">Sell All</button>
+                </div>
+                <div class="donut-wrap">
+                    <div class="donut-chart">
+                        <div class="donut-center">70%</div>
+                    </div>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <script>
+        const sidenav = document.querySelector('.sidenav');
+        const navToggle = document.querySelector('.nav');
+        const themeToggle = document.querySelector('.theme-toggle');
+        const body = document.body;
+
+        function toggleSidebar() {
+            sidenav.classList.toggle('collapsed');
+        }
+
+        function toggleTheme() {
+            body.classList.toggle('light-theme');
+            const icon = themeToggle.querySelector('i');
+            icon.classList.toggle('fa-moon-o');
+            icon.classList.toggle('fa-sun-o');
+        }
+
+        navToggle.addEventListener('click', toggleSidebar);
+        navToggle.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleSidebar();
+            }
+        });
+
+        themeToggle.addEventListener('click', toggleTheme);
+    </script>
+</body>
+</html>
